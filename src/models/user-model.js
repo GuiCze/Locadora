@@ -34,8 +34,7 @@ const userSchema = new Schema({
         required: true
     },
     endereco: {
-        type: Object,
-        required: true
+        type: Object
     },
     numero_casa: {
         type: Number,
@@ -45,7 +44,10 @@ const userSchema = new Schema({
         type: String,
         required: true,
         minlength: 12
-    }
+    },
+    assistido: {
+        type: Array
+    },
 })
 
 userSchema.pre("save", async function(next){
