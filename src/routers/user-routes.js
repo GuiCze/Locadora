@@ -7,7 +7,7 @@ const router = express.Router()
 
 router.get('/', check_token, user.index)
 router.get('/:id', check_token, user.show)
-router.post('/', check_token, check_role(["ADM"]), /*cep,*/ user.store)
+router.post('/', check_token, check_role(["ADM"]), user.store)
 router.put('/:id', check_token, check_role(["ADM"]), /*cep,*/ user.update)
 router.delete('/:id', check_token, check_role(["ADM"]), user.destroy)
 
