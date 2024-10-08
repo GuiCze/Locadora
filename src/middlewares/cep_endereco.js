@@ -1,7 +1,6 @@
 import axios from "axios";
 
 const cep = (req, res, next) => {
-    req.body.cep = req.body.cep.replaceAll("-", "", ".", "")
     if(req.body.cep != undefined &&
         req.body.cep.length == 8 &&
         !isNaN((Number(req.body.cep)))
