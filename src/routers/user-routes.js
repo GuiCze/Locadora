@@ -12,6 +12,6 @@ router.put('/:id', check_token, check_role(["ADM"]), /*cep,*/ user.update)
 router.delete('/:id', check_token, check_role(["ADM"]), user.destroy)
 
 router.post('/login', user.login)
-router.post('/register', /*cep,*/ user.register)
+router.post('/register', cep, user.register)
 
 export default router
