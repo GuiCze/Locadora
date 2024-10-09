@@ -18,7 +18,11 @@ const movieSchema = new Schema({
     faixa: {
         type: String,
         required: true,
-        enum: ["Livre", "16 Anos", "18 Anos"]
+        enum: ["0", "16", "18"]
+    },
+    genero: {
+        type: String,
+        required: true
     }
 })
 

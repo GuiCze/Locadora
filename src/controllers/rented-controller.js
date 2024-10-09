@@ -1,9 +1,10 @@
 import Rented from "../models/rented-model.js";
 
-const store = async (req,res)=>{
+const store = async (req,res,next)=>{
     try{
     const connect = await Rented.create(req.body)
     res.status(201).json(connect)
+    next()
     }catch(err){
         console.log(err);
     }

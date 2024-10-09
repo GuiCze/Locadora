@@ -38,6 +38,14 @@ const update = async (req,res)=>{
     }
 }
 
+const aluguel = async (req,res)=>{
+    try{
+        const connect = await User.findOneAndUpdate({email:req.body.email}, req.body, {new: true})
+    }catch(err){
+        send(err);
+    }
+}
+
 const destroy = async (req,res)=>{
     try{
         const connect = await User.findByIdAndDelete(req.params.id)
@@ -91,4 +99,4 @@ const register = async (req,res)=>{
 }
 
 
-export default {store, index, show, update, login, register, destroy}
+export default {store, index, show, update, login, register, destroy, aluguel}
